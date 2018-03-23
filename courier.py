@@ -134,19 +134,19 @@ def repeat_all_messages(message):
     status = load_staus (user_id)
     print ('[+]',status)
 
-    if message.find ('Курьер01') != -1:
+    if message.find ('Курьер01'.decode('utf8')) != -1:
         markup = menu_select_zakaz ()
         message_out = 'Одобрете заказ'
         bot.send_message(user_id,message_out,parse_mode='HTML',reply_markup=markup)     
 
-    if message.find ('Курьер02') != -1:
+    if message.find ('Курьер02'.decode('utf8')) != -1:
         markup = menu_select_zakaz ()
         message_out = 'Одобрете заказ'
         bot.send_message(user_id,message_out,parse_mode='HTML',reply_markup=markup)     
 
 
 
-    if message.find ('Заказ мой') != -1:
+    if message.find ('Заказ мой'.decode('utf8')) != -1:
         message_out = 'Заказ одобрен'
         bot.send_message(user_id,message_out,parse_mode='HTML')   
         markup = menu_dostavka ()
@@ -154,12 +154,12 @@ def repeat_all_messages(message):
         bot.send_message(user_id,message_out,parse_mode='HTML',reply_markup=markup)   
 
 
-    if message.find ('Доставлен') != -1:
+    if message.find ('Доставлен'.decode('utf8')) != -1:
         message_out = 'Заказ доставлен за 1 мин'
         bot.send_message(user_id,message_out,parse_mode='HTML')     
 
 
-    if message.find ('Плохой заказ') != -1:
+    if message.find ('Плохой заказ'.decode('utf8')) != -1:
         markup = menu_curery ()
         message_out = 'Заказ отменен'
         bot.send_message(user_id,message_out,parse_mode='HTML',reply_markup=markup)     
